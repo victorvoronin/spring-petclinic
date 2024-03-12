@@ -44,7 +44,8 @@ pipeline
                     def scannerHome = tool 'SonarScanner';
                     withSonarQubeEnv('SonarServer') 
                     {
-                        sh "mvn sonar:sonar -Dsonar.projectKey=opendays "
+                       // sh "mvn sonar:sonar -Dsonar.projectKey=opendays "
+                            sh "${scannerHome}/bin/sonar-scanner -X"
                     }
                     sleep(10)
                     timeout(time: 1, unit: 'MINUTES')
