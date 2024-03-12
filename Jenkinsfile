@@ -45,7 +45,7 @@ pipeline
                     withSonarQubeEnv('SonarServer') 
                     {
                        // sh "mvn sonar:sonar -Dsonar.projectKey=opendays "
-                            sh "${scannerHome}/bin/sonar-scanner -X -Dsonar.projectKey=opendays -Dsonar.login=admin -Dsonar.password=password"
+                            sh "${scannerHome}/bin/sonar-scanner -X -Dsonar.projectKey=opendays -Dsonar.login=admin -Dsonar.password=password -Dsonar.scm.exclusions.disabled=true"
                     }
                     sleep(10)
                     timeout(time: 1, unit: 'MINUTES')
