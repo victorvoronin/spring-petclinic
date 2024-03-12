@@ -14,7 +14,7 @@ pipeline
         stage('Build') 
         {
 	    steps {
-                git 'https://github.com/victorvoronin/spring-petclinic.git'
+                git url:'https://github.com/victorvoronin/spring-petclinic.git', branch:'main'
                 sh 'mvnw package -DskipTests=true'
             }
         }
