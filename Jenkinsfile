@@ -26,7 +26,7 @@ pipeline
                 ok "Ok"
             }
 	    steps {
-                sh 'mvnw test'
+                sh 'mvn test'
                 script {
                     junit 'target/*-reports/*.xml, */target/*-reports/*.xml'
                 }
